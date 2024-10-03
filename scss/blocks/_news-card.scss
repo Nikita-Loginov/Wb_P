@@ -1,0 +1,35 @@
+.news-card{
+    display: flex;
+    flex-direction: column;
+    border-radius: $borderRadiusCard;
+    overflow: hidden;
+    background-color: #101010;
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 24px;
+        height: 100%;
+    }
+    &__data{
+        @extend %inter-400;
+    }
+    &__review{
+        @extend %inter-400;
+        color:$accent-color;
+    }
+    &__text{
+        font-size: 18px;
+        color:#fff;
+        flex:1;
+    }
+    &__link{
+        @extend %inter-400;
+        color:#fff;
+    }
+    @media(max-width:767px){
+        &__content{
+            padding: 14px 14px 32px 14px;
+        }
+    }
+}

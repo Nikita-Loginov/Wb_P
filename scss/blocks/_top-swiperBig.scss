@@ -1,0 +1,45 @@
+.top-swiperBig{
+    margin-bottom: clamp(2.5rem, 1.898rem + 2.57vw, 4rem);
+    padding-bottom: clamp(2.5rem, -0.333rem + 12.09vw, 9.563rem);
+    position: relative;
+    z-index: 1;
+    &.container{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+        max-width: 680px;
+        align-items: flex-start;
+    }
+    &__title{
+        @extend %title;
+        font-size: clamp(3.75rem, 2.497rem + 5.35vw, 6.875rem);
+        color:#fff;
+    }
+    &__text{
+        font-size: 18px;
+    }
+    &__link{
+        @extend %btn;
+    }
+    &__slide{
+        padding: 0 15px;
+    }
+    .swiper-slide{
+        cursor:grab;
+    }
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #4c4c4c;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: $accent-color;
+}

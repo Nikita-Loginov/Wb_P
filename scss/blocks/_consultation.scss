@@ -1,0 +1,32 @@
+.consultation{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    &__title{
+        @extend %inter-500;
+        font-size: 20px;
+        color:#101010;
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__item{
+        padding-left: 28px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        color:#101010;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 14px;
+            height: 15px;
+            transform: translateY(-1px);
+            left: 0;
+            background-repeat: no-repeat;
+            background-image: url(../../img/icon/arrowDecorLink.svg);
+        }
+    }
+}

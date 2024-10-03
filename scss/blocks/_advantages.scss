@@ -1,0 +1,60 @@
+.advantages{
+    padding: clamp(2rem, 1.198rem + 3.42vw, 4rem) 0 clamp(3rem, -0.81rem + 16.26vw, 12.5rem);
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.5rem, 0.096rem + 5.99vw, 5rem);
+    }
+    &__title{
+        @extend %title;
+        font-size: clamp(3.125rem, 1.621rem + 6.42vw, 6.875rem);
+        &-accent{
+            color:$accent-color;
+        }
+    }
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(360px,1fr));
+        gap: 20px;
+        justify-content: space-between;
+    }
+    .advantages-card{
+        background-color: #34312d;
+        position: relative;
+        overflow: hidden;
+        &--accent{
+            background-color: $accent-color;
+        }
+        &:before{
+            position: absolute;
+            content:"";
+            width: 200%;
+            height: 200%;
+            top: -295px;
+            left: -411px;
+            background-color: #101010;
+            border-radius: 50%;
+            z-index: 0;
+        }
+        &__content{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            height: 100%;
+            position: relative;
+        }
+        &__title{
+            font-size: 25px;
+            text-transform: none;
+        }
+        &__text{
+            color:#e5e5e5;
+            flex:1;
+        }
+    }
+    @media(max-width:430px){
+        &__items{
+            grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+        }
+    }
+}

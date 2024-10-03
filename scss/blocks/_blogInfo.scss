@@ -1,0 +1,95 @@
+.blogInfo{
+    padding: 0 0 clamp(3rem, 0.193rem + 11.98vw, 10rem);
+    &__items{
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding-bottom: 48px;
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+        &--main{
+            .blogInfo__item-contentbox{
+                flex-direction: row;
+            }
+            .blogInfo__item-title{
+                @extend %title;
+                font-size: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+                max-width: 810px;
+            }
+            .blogInfo__item-content{
+                flex-direction: column;
+            }
+        }
+    }
+    &__item-title{
+        @extend %inter-500;
+        font-size: 24px;
+        color:#101010;
+        max-width: 730px;
+    }
+    &__item-contentbox{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    &__item-content{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        img{
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+    &__item-video{
+        border-radius: 10px;
+    }
+    &__item-textbox{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__item-text{
+        @extend %inter-400;
+        color:#2e2e2e;
+        line-height: 200%;
+    }
+    &__share{
+        padding-top: 44px;
+        border-top: 1px solid #e5e5e5;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+    &__share-text{
+        @extend %inter-400;
+        color:#777;
+    }
+    @media(max-width:1023px){
+        &__item-content{
+            flex-direction: column;
+            &--reverseMedia{
+                flex-direction: column-reverse;
+            }
+        }
+    }
+    @media(max-width:767px){
+        &__item--main{
+            .blogInfo__item-video{
+                img{
+                    height: 260px;
+                }
+            }
+        }
+        &__item-content{
+            img{
+                width: 100%;
+                height: 260px;
+                object-fit: none;
+            }
+        }
+    }
+}

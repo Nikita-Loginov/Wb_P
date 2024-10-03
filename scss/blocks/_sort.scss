@@ -1,0 +1,73 @@
+.sort{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 16px;
+    &__select{
+        border: 1px solid #e5e5e5;
+        border-radius: 10px;
+        min-height: 60px;
+        padding: 0 45px 0 15px;
+        @extend %inter-500;
+        color:#777;
+        appearance: none;
+        font-size: 16px;
+        background-image: url(../../img/icon/arrowBlack.svg);
+        background-repeat: no-repeat;
+        background-position: 94% 52%;
+        cursor: pointer;
+        option{
+            @extend %inter-500;
+            color:#777;
+            font-size: 16px;
+        }
+    }
+    &__filter{
+        display: flex;
+        gap: 10px;
+    }
+    &__filter-searchMedia{
+        flex-shrink: 0;
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;;
+        background-color: transparent;
+        border: 1px solid #e5e5e5;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+    &__filter-btn{
+        background-color: transparent;
+        svg{
+            rect{
+                stroke:#4C4C4C;
+            }
+        }
+        &.active{
+            svg{
+                rect{
+                    fill:#4C4C4C;
+                }
+            }
+        }
+    }
+    @media(max-width:1300px){
+        &__filter-btn{
+            display: none;
+        }
+    }
+    @media(max-width:1023px){
+        &__filter-searchMedia{
+            display: flex;
+        }
+    }
+    @media(max-width:450px){
+        &__select{
+            padding-right: 35px;
+            background-position: 97% 52%;
+        }
+    }
+    
+}

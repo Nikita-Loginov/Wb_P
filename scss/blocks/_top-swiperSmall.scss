@@ -1,0 +1,34 @@
+.top-swiperSmall{
+    &__slide{
+        background-color: #131313;
+        padding: clamp(1.5rem, 0.898rem + 2.57vw, 3rem) 20px;
+        text-align: center;
+        border-radius: $borderRadiusCard;
+        cursor: grab;
+        transition: scale .6s;
+        height: 100%;
+        &:hover{
+            scale:1.05;
+            .top-swiperSmall__link{
+                opacity: 1;
+            }
+        }
+    }
+    &__text{
+        @extend %title;
+        color:#fff;
+        font-size: clamp(1.125rem, 0.975rem + 0.64vw, 1.5rem);
+        @extend %inter-500;
+    }
+    &__link{
+        opacity: 0;
+        transition: all .3s;
+        color:$accent-color;
+    }
+    .swiper-wrapper{
+        align-items: stretch;
+    }
+    .swiper-slide{
+        height: auto;
+    }
+}

@@ -1,0 +1,19 @@
+.partners{
+    padding: clamp(0rem, -1.278rem + 5.45vw, 3.188rem) 0;
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        gap:20px;
+        align-items: center;
+        animation: swiperPartners 30s linear infinite;
+    }
+}
+
+@keyframes swiperPartners{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}

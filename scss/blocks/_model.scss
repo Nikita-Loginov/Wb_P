@@ -1,0 +1,38 @@
+.model{
+    padding: clamp(2.5rem, 1.497rem + 4.28vw, 5rem) 0;
+    background-color: #101010;
+    position: relative;
+    overflow: hidden;
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 10px;
+    }
+    &__title{
+        @extend %title;
+        color:#fff;
+        max-width: 420px;
+    }
+    
+    .card-product{
+        height: 100%;
+    }
+    .model-swiper{
+        overflow: visible;
+    }
+    .swiper-wrapper{
+        align-items: stretch;
+    }
+    .swiper-slide{
+        height: auto;
+    }
+    .model-swiper__slide{
+        height: 100%;
+    }
+    .card-product__title{
+        flex:1;
+    }
+    @media(max-width:767px){
+    }
+}

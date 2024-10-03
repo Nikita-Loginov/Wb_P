@@ -1,0 +1,22 @@
+.advantages-card{
+    border-radius: $borderRadiusCard;
+    background-color: $accent-color;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    &__title{
+        @extend %inter-500;
+        font-size: 20px;
+        color:#fff;
+        text-transform: uppercase;
+    }
+    &__text{
+        margin-bottom: 8px;
+        flex:1;
+    }
+    &__link{
+        @extend %inter-500;
+        color:#fff;
+    }
+}

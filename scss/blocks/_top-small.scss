@@ -1,0 +1,46 @@
+.top-small{
+    padding: 150px 0 clamp(2rem, 1.173rem + 3.53vw, 4.063rem);
+    background-repeat: no-repeat;
+    background-size: cover;
+    &--catalogy{
+        background-image: url(../img/topSmall/catalogy/bg.png);
+        background-size: cover;
+    }
+    &--contact{
+        background-image: url(../img/topSmall/contact/bg.png);
+    }
+    &--bicycleWorkshop{
+        background-image: url(../img/topSmall/bicycleWorkshop/bg.png);
+    }
+    &--about{
+        background-image: url(../img/topSmall/about/bg.png);
+    }
+    &--storage{
+        background-image: url(../img/topSmall/storage/bg.png);
+    }
+    &--shippingPayment{
+        background-image: url(../img/topSmall/shippingPayment/bg.png);
+    }
+    &--blog{
+        background-image: url(../img/topSmall/blog/bg.png);
+    }
+    &--termsOfUs,
+    &--car,
+    &--placingOrder{
+        .top-small__title{
+            color:#101010;
+        }
+    }
+    &--guarantees{
+        background-image: url(../img/topSmall/guarantees/bg.png);
+    }
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 1.549rem + 1.93vw, 3.125rem);
+    }
+    &__title{
+        @extend %title;
+        color:#fff;
+    }
+}

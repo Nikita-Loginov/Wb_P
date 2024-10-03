@@ -1,0 +1,8 @@
+.summ{
+    padding: clamp(3rem, 2.599rem + 1.71vw, 4rem) 0 clamp(3rem, 0.193rem + 11.98vw, 10rem);
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(3rem, 2.198rem + 3.42vw, 5rem);
+    }
+}

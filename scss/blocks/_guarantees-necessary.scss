@@ -1,0 +1,52 @@
+.guarantees-necessary{
+    margin-bottom: clamp(3rem, 2.198rem + 3.42vw, 5rem);
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+    &__title{
+        @extend %inter-500;
+        font-size: clamp(1.25rem, 1.15rem + 0.43vw, 1.5rem);
+        color:#0a0a0a;
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__item{
+        @extend %inter-400;
+        color:#101010;
+        position: relative;
+        padding-left: 30px;
+        display: flex;
+        align-items: center;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 14px;
+            height: 15px;
+            left: 0;
+            transform: translateY(-1px);
+            background-image: url(../../img/icon/arrowDecorLink.svg);
+        }
+    }
+    &__textbox{
+        padding: 24px;
+        background-color: #f8f8f8;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-radius: 10px;
+        p{
+            @extend %inter-400;
+            color:#101010;
+        }
+    }
+    @media(max-width:767px){
+        &__inner{
+            gap: 24px;
+        }
+    }
+}

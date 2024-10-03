@@ -1,0 +1,147 @@
+.placingOrder{
+    padding-bottom: 160px;
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__details{
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+    &__payment{
+        max-width: 896px;
+        width: 100%;
+    }
+    &__payment,
+    &__delivery{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding:clamp(1.5rem, 1.439rem + 1.3vw, 2.5rem);
+        border: 1px solid #e5e5e5;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+    &__payment-items{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+    }
+    &__payment-item-fullname{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 15px;
+        justify-content: space-between;
+    }
+    &__payment-item-adress{
+        display: grid;
+        grid-template-columns: 220px 1fr 74px 74px;
+        gap: 15px;
+        justify-content: space-between;
+    }
+    &__payment-item-contact{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 15px;
+        justify-content: space-between;
+    }
+    &__payment-input{
+        display: flex;
+        align-items: center;
+        min-height: 58px;
+        background: #f8f8f8;
+        border-radius: 10px;
+        padding: 0 16px;
+        @extend %inter-400;
+        color:#b3b3b3;
+        font-size: 16px;
+        &::placeholder{
+            @extend %inter-400;
+            color:#b3b3b3;
+            font-size: 16px;
+        }
+    }
+    &__payment-item-textarea{
+        resize: none;
+        width: 100%;
+        background: #f8f8f8;
+        border-radius: 10px;
+        color:#b3b3b3;
+        padding: 16px;
+        font-size: 16px;
+        min-height: 160px;
+        &::placeholder{
+            @extend %inter-400;
+            color:#b3b3b3;
+            font-size: 16px;
+        }
+    }
+    &__payment-title,
+    &__delivery-title{
+        @extend %title;
+        font-size: clamp(2rem, 1.97rem + 0.65vw, 2.5rem);
+    }
+    &__delivery{
+        flex-basis: 368px;
+    }
+    &__itog{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: clamp(1.5rem, 1.439rem + 1.3vw, 2.5rem);
+        border: 1px solid #e5e5e5;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+    &__itog-title{
+        @extend %title;
+        font-size: clamp(2rem, 1.97rem + 0.65vw, 2.5rem);
+        align-self: center;
+    }
+    .itog-courier{
+        flex-basis: 350px;
+    }
+    .itog-confirmation{
+        flex-basis: 350px;
+    }
+    @media(max-width:1279px){
+        &__details{
+            flex-direction: column;
+        }
+        &__delivery{
+            flex-basis: auto;
+        }
+        &__payment{
+            max-width: 100%;
+        }
+    }
+    @media(max-width:1023px){
+        &__itog{
+            flex-direction: column;
+            gap: 32px;
+        }
+        .itog-courier,
+        .itog-confirmation{
+            flex-basis: auto;
+        }
+    }
+    @media(max-width:830px){
+        &__payment-item-fullname,
+        &__payment-item-contact{
+            grid-template-columns: repeat(1,1fr);
+        }
+        &__payment-item-adress{
+            grid-template-columns: repeat(2,1fr);
+        }
+        &__payment-input--city,
+        &__payment-input--street{
+            grid-column: span 2;
+        }
+        &__payment-input{
+            width: 100%;
+        }
+    }
+}

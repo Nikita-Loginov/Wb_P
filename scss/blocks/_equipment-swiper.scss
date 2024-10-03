@@ -1,0 +1,49 @@
+.equipment-swiper{
+    position: relative;
+    &__btnbox{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 999;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__btn{
+        width: 43px;
+        height: 43px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-color: #000;
+        transition: all .6s;
+        &:hover{
+            background-color: $accent-color;
+        }
+        &:before{
+            position: absolute;
+            content:"";
+            width: 14px;
+            height: 24px;
+        }
+        &--prev{
+            transform: rotate(-180deg);
+            margin-left: 20px;
+        }
+        &--next{
+            margin-right: 20px;
+        }
+    }
+    &__slide,
+    .card-product{
+        height: 100%;
+    }
+    .swiper-wrapper{
+        align-items: stretch;
+    }
+    .swiper-slide{
+        height: auto;
+    }
+}

@@ -1,0 +1,20 @@
+.product-panel{
+    padding-bottom: clamp(3rem, 2.198rem + 3.42vw, 5rem);
+    &__desc{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+        margin-bottom: clamp(3rem, 2.198rem + 3.42vw, 5rem);
+        h4{
+            @extend %title;
+            font-size: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+        }
+        p{
+            @extend %inter-400;
+            color:#101010;
+        }
+    }
+    &__general{
+        margin-bottom: clamp(3rem, 2.549rem + 1.93vw, 4.125rem);
+    }
+}

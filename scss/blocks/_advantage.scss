@@ -1,0 +1,46 @@
+.advantages{
+    padding: clamp(3rem, 0.193rem + 11.98vw, 10rem) 0;
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 0.797rem + 5.13vw, 5rem);
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__title{
+        @extend %title;
+    }
+    &__info{
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+    &__img{
+        width: 50%;
+        border-radius: 10px;
+        img{
+            border-radius: inherit;
+            object-fit: cover;
+        }
+    }
+    &__cards{
+        flex-basis: 620px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+        justify-content: space-between;
+        gap: 20px;
+    }
+    @media(max-width:1170px){
+        &__img{
+            display: none;
+        }
+        &__cards{
+            width: 100%;
+            flex-basis: auto;
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        }
+    }
+}

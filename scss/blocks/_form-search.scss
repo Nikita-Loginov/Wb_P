@@ -1,0 +1,97 @@
+.form-search{
+    position: relative;
+    &__btn{
+        display: flex;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        position: relative;
+        &-xmark{
+            width: 24px;
+            display: none;
+        }
+        &.xmark{
+            .form-search__btn-search{
+                display: none;
+            }
+            .form-search__btn-xmark{
+                display: block;
+            }
+        }
+    }
+    &__content{
+        position: absolute;
+        right: -9px;
+        bottom: -50px;
+        display: flex;
+        align-items: center;
+        scale:0;
+        transition: all .6s;
+        &.active{
+            scale:1;
+        }
+        &.clear{
+            .form-search__content-clear{
+                scale:1;
+                opacity: 1;
+            }
+        }
+    }
+    &__content-input{
+        @extend %input;
+        background-color: #101010;
+        border: 1px solid #4c4c4c;
+        padding-right: 70px;
+        &:focus{
+            transition: all .2s;
+            box-shadow: 3px 3px 3px #4c4c4c;
+        }
+    }
+    &__content-decor{
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-right: 10px;
+    }
+    &__content-btn{
+        padding: 0;
+        margin:0;
+        background-color: transparent;
+        transform: translateY(2px);
+    }
+    &__content-clear{
+        cursor: pointer;
+        width: 14px;
+        height: 14px;
+        scale:0;
+        opacity: 0;
+        position: relative;
+        transition: all .6s;
+        &:before,
+        &:after{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 3px;
+            background-color: #ffffff;
+        }
+        &:before{
+            top: 50%;
+            transform: translateY(-65%);
+            rotate:45deg;
+        }
+        &:after{
+            bottom: 50%;
+            transform: translateY(63%);
+            rotate:-45deg;
+        }
+    }
+    @media(max-width:550px){
+        position: static;
+        &__content{
+            right: 0;
+        }
+    }
+}

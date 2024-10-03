@@ -1,0 +1,27 @@
+.gallery{
+    padding-bottom: clamp(3rem, 0.193rem + 11.98vw, 10rem);
+    &__title{
+        @extend %title;
+        margin-bottom: clamp(2rem, 0.797rem + 5.13vw, 5rem);
+    }
+    &__items{
+        display: flex;
+        justify-content: space-between;
+        animation: transformGallery 20s infinite ease-in-out;
+        gap: 40px;
+    }
+    &__item{
+        img{
+            border-radius: 10px;
+        }
+    }
+}
+
+@keyframes transformGallery{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}

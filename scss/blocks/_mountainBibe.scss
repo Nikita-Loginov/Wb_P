@@ -1,0 +1,90 @@
+.mountainBibe{
+    padding: clamp(2.5rem, 0.194rem + 9.84vw, 8.25rem) 0 clamp(2.5rem, 1.497rem + 4.28vw, 5rem);
+    background-color: #f8f8f8;
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 0.797rem + 5.13vw, 5rem);
+        align-items: flex-start;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__title{
+        @extend %title;
+    }
+    &__info{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__cards{
+        flex-basis: 620px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__item{
+        flex-basis: 510px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    }
+    &__item-img{
+        overflow: hidden;
+        border-radius: 10px;
+        img{
+            border-radius: inherit;
+        }
+        
+    }
+    &__item-content{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+    }
+    &__item-text{
+        @extend %inter-400;
+        color:#4c4c4c;
+    }
+    &__item-link{
+        @extend %btn;
+        padding: 0 56px;
+    }
+    @media(max-width:1023px){
+        &__info{
+            flex-direction: column;
+        }
+        &__cards{
+            grid-template-columns: repeat(2,1fr);
+            flex-basis: auto;
+        }
+        &__item{
+            flex-basis: auto;
+            gap: 24px;
+        }
+        &__item-img{
+            margin: 0 auto;
+        }
+        &__item-content{
+            gap: 32px;
+        }
+    }
+    @media(max-width:767px){
+        &__cards{
+            grid-template-columns: repeat(1,1fr);
+            flex-basis: auto;
+        }
+        &__item-img{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

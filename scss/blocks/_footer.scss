@@ -1,0 +1,42 @@
+.footer{
+    padding-top: clamp(2.5rem, 1.247rem + 5.35vw, 5.625rem);
+    background-color: #101010;
+    &__copy{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 20px 0;
+        border-top: 1px solid #34312D;
+    }
+    &__copy-text,
+    &__copy-link{
+        color:#fff;
+        @extend %inter-400;
+    }
+    &__copy-link{
+        position: relative;
+        &:before{
+            content:"";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -4px;
+            background-color: $accent-color;
+            scale:0;
+            transform-origin: right;
+            transition: scale .6s;
+        }
+        &:hover{
+            &:before{
+                scale:1;
+                transform-origin: left;
+            }
+            
+        }
+    }
+    @media(max-width:600px){
+        &__copy{
+            flex-direction: column;
+        }
+    }
+}

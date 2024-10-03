@@ -1,0 +1,35 @@
+.itog-courier{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    &__title{
+        @extend %inter-500;
+        font-size: 24px;
+        color:$accent-color;
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__item{
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+    }
+    &__item-properties{
+        @extend %inter-400;
+        color:#777;
+    }
+    &__item-meaning{
+        flex-basis: 60%;
+        @extend %inter-400;
+        color:#101010;
+        text-align: right;
+    }
+    @media(max-width:450px){
+        &__item-meaning{
+            flex-basis: 90%;
+        }
+    }
+}

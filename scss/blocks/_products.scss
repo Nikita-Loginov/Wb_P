@@ -1,0 +1,83 @@
+.products{
+    padding-bottom: 160px;
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__items{
+        flex-basis: 950px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    &__item-img{
+        object-fit: contain;
+    }
+    &__item-title{
+        color:#101010;
+        flex-basis: 200px;
+        flex-shrink: 0;
+    }
+    &__item-price{
+        @extend %inter-500;
+        font-size: 20px;
+        color:#101010;
+        text-transform: uppercase;
+    }
+    &__itog{
+        padding: 32px 24px;
+        border-radius: 10px;
+        border: 1px solid #e5e5e5;
+        flex-basis: 290px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__numberbox,
+    &__summWithDiscountbox,
+    &__discountbox,
+    &__summ{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 24px;
+    }
+    &__number-text,
+    &__summWithDiscount-text,
+    &__discount-text{
+        color:#777;
+        flex-basis: 50%;
+    }
+    &__number-num,
+    &__summWithDiscount-num,
+    &__discount-num{
+        color:#101010;
+    }
+    &__summ{
+        padding-top: 24px;
+        border-top: 1px solid #f8f8f8;
+    }
+    &__summ-text{
+        @extend %inter-500;
+        font-size: 24px;
+        color:#101010;
+        flex-basis: 50%;
+    }
+    &__summ-num{
+        text-transform: uppercase;
+        @extend %inter-500;
+        font-size: 24px;
+        color:#101010;
+    }
+    &__link{
+        @extend %btn;
+    }
+    .counter{
+        min-height: 52px;
+    }
+}

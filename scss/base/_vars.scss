@@ -1,0 +1,168 @@
+//COLORS
+$bg-color:#fff;
+$main-color:#fff;
+$accent-color:#f57520;
+$text-color:#fff;
+$title-color:#101010;
+$input-color:#b3b3b3;
+$input-colorbg:#fff;
+$textarea-color:#b3b3b3;
+$textarea-colorbg:#fff;
+$button-color:#fff;
+$button-colorbg:#f57520;
+//PADDING
+
+@mixin padding($pt,$pr,$pb,$pl){
+    padding:$pt $pr $pb $pl;
+}
+
+//MIN-HEIGHT
+$minHeight-btn:52px;
+$minHeight-textarea:154px;
+$minHeight-input:46px;
+//BORDER
+@mixin border($borderWidth,$borderColor,$borderStyle){
+    border:$borderWidth $borderColor $borderStyle;
+}
+//CONTAINER
+$padding-container:0px 15px;
+$maxWidth-container:1310px;
+//BORDERRADIUS
+$borderRadiusBtn:10px;
+$borderRadiusInput:10px;
+$borderRadiusTextarea:10px;
+$borderRadiusCard:10px;
+@mixin borderRadius($borderRadiusWidth){
+    border-radius:$borderRadiusWidth;
+}
+
+
+%inter-300{
+    font-family: 'Inter';
+    font-weight: 300;
+}
+
+%inter-400{
+    font-family: 'Inter';
+    font-weight: 400;
+}
+
+%inter-500{
+    font-family: 'Inter';
+    font-weight: 500;
+}
+
+%BebasNeue-400{
+    font-family: 'Bebas Neue';
+    font-weight: 400;
+}
+
+%BebasNeue-700{
+    font-family: 'Bebas Neue';
+    font-weight: 700;
+}
+
+%title{
+    font-size: clamp(3.125rem, 2.774rem + 1.5vw, 4rem);
+    color:$title-color;
+    line-height: 1.23;
+    letter-spacing: 5%;
+    @extend %BebasNeue-400;
+}
+
+%text{
+    font-size: 20px;
+    color:$text-color;
+    line-height: 160%;
+    letter-spacing: 1%;
+    @extend %inter-500;
+}
+
+%flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%btn{
+    @extend %flexCenter;
+    min-height: $minHeight-btn;
+    @include border(1px,$button-colorbg,solid);
+    @include padding(0,20px,0,20px);
+    @include borderRadius($borderRadiusBtn);
+    background-color: $button-colorbg;
+    color:$button-color;
+    transition: all .5s;
+    font-size: 16px;
+    line-height: 1.26;
+    @extend %inter-500;
+    position: relative;
+    overflow: hidden;
+    span{
+        transform: translateX(0);
+        transition: all .6s;
+    }
+    &:before{
+        content:attr(title);
+        position: absolute;
+        @extend %flexCenter;
+        width: 100%;
+        height: 100%;
+        color:inherit;
+        border-radius: inherit;
+        transform: translateX(-100%);
+        transition: all .6s;
+    }
+    &:hover{
+        border-radius: 15px;
+        &:before{
+            transform: translateX(0);
+        }
+        span{
+            transform: translateX(400%);
+        }
+    }
+}
+
+%input{
+    @extend %flexCenter;
+    @include padding(0,20px,0,20px);
+    @include border(1px,$input-colorbg,solid);
+    @include borderRadius($borderRadiusInput);
+    min-height: $minHeight-input;
+    background-color: $input-colorbg;
+    color:$input-color;
+    @extend %inter-300;
+    transition: all .2s;
+    &::placeholder{
+        color:$input-color;
+        font-size: 16px;
+        line-height: 1.26;
+        @extend %inter-300;
+    }
+    &:focus{
+        box-shadow: 3px 3px 3px $input-colorbg;
+    }
+}
+
+%textarea{
+    @extend %flexCenter;
+    @include padding(16px,16px,16px,16px);
+    @include border(1px,$textarea-colorbg,solid);
+    @include borderRadius($borderRadiusTextarea);
+    min-height: $minHeight-textarea;
+    background-color: $textarea-colorbg;
+    color:$textarea-color;
+    resize: none;
+    @extend %inter-300;
+    &::placeholder{
+        @extend %inter-300;
+        color:$textarea-color;
+        font-size: 16px;
+        line-height: 1.26;
+    }
+    &:focus{
+        box-shadow: 3px 3px 3px $input-colorbg;
+    }
+}
+

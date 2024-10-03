@@ -1,0 +1,50 @@
+.newsletterQuostion{
+    margin-bottom: clamp(3rem, 0.193rem + 11.98vw, 10rem);
+    background-color: $accent-color;
+    position: relative;
+    &:before{
+        position: absolute;
+        content:"";
+        width: 1096px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-image: url(../../img/newsletterQuostion/bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 0;
+    }
+    &__inner{
+        padding: 45px 0 36px;
+    }
+    &__content{
+        max-width: 534px;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1rem, 0.599rem + 1.71vw, 2rem);
+        color:#fff;
+        position: relative;
+    }
+    &__title,
+    &__tel{
+        @extend %title;
+        text-transform: uppercase;
+        color:#fff;
+    }
+    &__tel{
+        font-size: clamp(2rem, 1.198rem + 3.42vw, 4rem);
+    }
+    &__telbox{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__tel-text{
+        @extend %inter-500;
+        font-size: 20px;
+        color:#fff;
+    }
+    &__text{
+        @extend %inter-400;
+    }
+}

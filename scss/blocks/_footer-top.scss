@@ -1,0 +1,29 @@
+.footer-top{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 40px;
+    &__content{
+        flex-basis: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.875rem, 1.374rem + 2.14vw, 3.125rem);
+    }
+    &__menubox{
+        display: flex;
+        flex-basis: 850px;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    @media(max-width:850px){
+        &__menubox{
+            flex-basis: auto;
+        }
+    }
+    @media(max-width:600px){
+        flex-direction: column;
+        &__content{
+            flex-basis: auto;
+        }
+    }
+}

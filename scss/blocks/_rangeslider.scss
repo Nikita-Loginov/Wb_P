@@ -1,0 +1,33 @@
+.rangeslider{
+    width: 100%;
+    cursor: pointer;
+}
+
+.noUi-target{
+    background-color: #b1b1b1;
+    box-shadow: none;
+}
+
+.noUi-horizontal{
+    height: 10px;
+}
+
+.noUi-connect{
+    background-color:#101010;
+}
+
+.noUi-horizontal .noUi-handle{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 5px solid #101010;
+    box-shadow: none;
+    cursor: pointer;
+    right: -4px;
+    top: -5px;
+    &:before,
+    &:after{
+        display: none;
+    }
+}

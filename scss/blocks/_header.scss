@@ -1,0 +1,215 @@
+.header{
+    position: fixed;
+    min-width: 100%;
+    padding: 20px 0;
+    z-index: 2;
+    &--color{
+        background-color: #101010;
+    }
+    &__inner{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__logo{
+        position: relative;
+        z-index: 1000;
+        svg{
+            path{
+                transition: all 1s;
+            }
+        }
+        @media screen and (max-width:600px){
+            svg{
+                width: 100%;
+                height: auto;
+            }
+            &.black{
+                svg{
+                    path{
+                        fill:#101010;
+                    }
+                }
+            }
+        }
+        
+    }
+    &__info{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-left: auto;
+    }
+    &__info-like,
+    &__info-basket{
+        position: relative;
+    }
+    &__info-person,
+    &__info-like,
+    &__info-basket{
+        display: flex;
+    }
+    &__info-basket{
+        background-color: transparent;
+    }
+    &__info-like-decor,
+    &__info-basket-decor{
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background-color: $accent-color;
+        border-radius: 50%;
+        right: -1px;
+        top: -1px;
+    }
+    &__addInfo{
+        margin-left: auto;
+    }
+    &__addInfo-list{
+        position: fixed;
+        background-color: #fff;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        padding: 40px;
+        min-width: 450px;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: all .7s;
+        z-index: 999;
+        &.active{
+            transform: translateX(0);
+        }
+    }
+    &__addInfo-list-btn{
+        background-color: transparent;
+        margin: 0;
+        padding: 15px;
+        position: relative;
+        margin-bottom: 70px;
+        margin-left: auto;
+        &:before,
+        &:after{
+            position: absolute;
+            content:"";
+            height: 2px;
+            width: 100%;
+            background-color: #b3b3b3;
+            left: 0;
+        }
+        &:before{
+            top: 50%;
+            transform: translateY(-50%);
+            rotate:45deg;
+        }
+        &:after{
+            bottom: 50%;
+            transform: translateY(50%);
+            rotate:-45deg;
+        }
+    }
+    &__addInfo-btn{
+        display: flex;
+        width: 32px;
+        height: 18px;
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        &:before,
+        &:after{
+            position: absolute;
+            content:"";
+            height: 2px;
+            right: 0;
+            background-color: #fff;
+        }
+        &:before{
+            top: 0;
+            width: 100%;
+        }
+        &:after{
+            top: 50%;
+            transform: translateY(-50%);
+            width: 70%;
+        }
+        span{
+            position: absolute;
+            height: 2px;
+            right: 0;
+            background-color: #fff;
+            width: 70%;
+            bottom: 0;
+        }
+    }
+    &__addInfo-list{
+        overflow-y: auto;
+        overflow-x: hidden
+    }
+    &__addInfo-text{
+        @extend %title;
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+    &__addInfo-itembox{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+    &__addInfo-item{
+        position: relative;
+        &:before{
+            content:"";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            background-color: $accent-color;
+            scale:0;
+            transform-origin: right;
+            transition: scale .6s;
+        }
+        &:hover{
+            &:before{
+                scale:1;
+                transform-origin: left;
+            }
+            
+        }
+    }
+    &__addInfo-link{
+        font-size: 18px;
+        color:#000;
+        @extend %inter-400;
+    }
+    @media(max-width:1279px){
+        &__addInfo-text{
+            display: none;
+        }
+        &__addInfo-list{
+            min-width: auto;
+        }
+        &__addInfo-list-btn{
+            margin-bottom: 54px;
+        }
+        &__addInfo-itembox{
+            padding-left: 16px;
+        }
+        &__addInfo{
+            margin: 0;
+        }
+    }
+    @media(max-width:600px){
+        &__addInfo-list{
+            left: 0;
+        }
+    }
+    @media(max-width:550px){
+        &__inner{
+            position: relative;
+        }
+    }
+}

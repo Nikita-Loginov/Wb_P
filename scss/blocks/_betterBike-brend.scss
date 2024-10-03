@@ -1,0 +1,28 @@
+.betterBike-brend{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 0.198rem + 3.42vw, 3rem);  
+    &__text{
+        max-width: $maxWidth-container;
+        margin: 0 auto;
+        padding: $padding-container;
+        width: 100%;
+        font-size: 24px;
+        @extend %inter-500;
+        color:#101010;
+    }
+    &__items{
+        display: flex;
+        gap: 40px;
+        animation: transformBrand 40s infinite ease-in-out;
+    }
+}
+
+@keyframes transformBrand{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}

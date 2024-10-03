@@ -1,0 +1,72 @@
+.guarantees-brand{
+    padding: clamp(1.5rem, 0.898rem + 2.57vw, 3rem) 0 clamp(3rem, 2.198rem + 3.42vw, 5rem);
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(3rem, 2.749rem + 1.07vw, 3.625rem);
+    }
+    &__content{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    &__text{
+        @extend %inter-400;
+        font-size: 16px;
+        color:#4c4c4c;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 1.599rem + 1.71vw, 3rem);
+    }
+    &__title{
+        @extend %title;
+        font-size: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+    }
+    &__list{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    &__left,
+    &__right{
+        border-radius: 10px;
+        border: 1px solid #f8f8f8;
+        .guarantees-brand__item{
+            background-color: #fff;
+            &:nth-child(even){
+                background-color: #f8f8f8;
+            }
+        }
+    }
+    &__item{
+        padding: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+    &__item-brand{
+        @extend %inter-500;
+        color:#101010;
+    }
+    &__item-date{
+        color:#4c4c4c;
+    }
+    @media(max-width:767px){
+        &__content{
+            grid-template-columns: repeat(1,1fr);
+            gap: 16px;
+        }
+        &__list{
+            grid-template-columns: repeat(1,1fr);
+            gap: 0;
+        }
+        &__item-date{
+            text-align: right;
+        }
+    }
+}

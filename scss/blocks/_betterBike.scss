@@ -1,0 +1,46 @@
+.betterBike{
+    padding-bottom:clamp(5.625rem, 4.372rem + 5.35vw, 8.75rem);
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.5rem, 0.898rem + 2.57vw, 3rem);
+    }
+    &__title{
+        @extend %title;
+        text-transform: uppercase;
+        font-size: clamp(2rem, 1.198rem + 3.42vw, 4rem);
+    }
+    &__textbox{
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 20px;
+    }
+    &__text{
+        @extend %inter-400;
+        color:#101010;
+    }
+    &__img{
+        margin: clamp(1.5rem, 1.099rem + 1.71vw, 2.5rem) 0 clamp(1.5rem, 0.698rem + 3.42vw, 3.5rem);
+        img{
+            object-fit: cover;
+        }
+    }
+    @media(max-width:1023px){
+        &__textbox{
+            grid-template-columns: repeat(1,1fr);
+            gap: 16px;
+        }
+        &__img{
+            img{
+                height: 300px;
+            }
+        }
+    }
+    @media(max-width:600px){
+        &__img{
+            img{
+                height: 160px;
+            }
+        }
+    }
+}

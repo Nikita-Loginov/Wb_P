@@ -1,0 +1,220 @@
+.product-general{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    &__imgbox{
+        max-width: 623px;
+        &--media{
+            display: none;
+        }
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+        flex-basis: 510px;
+    }
+    &__header{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    &__name{
+        @extend %title;
+        font-size: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+    }
+    &__specs{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    &__specs-text,
+    &__specs-article{
+        @extend %inter-400;
+        color:#b3b3b3;
+    }
+    &__specs-detalies{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__specs-characteristics{
+        @extend %inter-400;
+        color:#4d932c;
+    }
+    &__pricebox{
+        display: flex;
+        gap: 16px;
+        align-items: baseline;
+    }
+    &__price{
+        &--new{
+            @extend %inter-500;
+            font-size: 40px;
+            color:#000;
+        }
+        &--old{
+            @extend %inter-500;
+            font-size: 18px;
+            color:#b3b3b3;
+            text-decoration: line-through;
+        }
+    }
+    &__descbox{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        p{
+            @extend %inter-400;
+            color:#4c4c4c;
+        }
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__form--size{
+        .product-general__form-itembox{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .product-general__form-input{
+            &:checked + .product-general__form-check{
+                background-color: #101010;
+                color:#fff;
+            }
+        }
+        .product-general__form-check{
+            @extend %flexCenter;
+            @extend %inter-500;
+            min-width: 56px;
+            min-height: 49px;
+            color:#2e2e2e;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+            transition: all .6s;
+            cursor: pointer;
+        }
+    }
+    &__form-color{
+        .product-general__form-itembox{
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+        .product-general__form-input{
+            &:checked + .product-general__form-check{
+                &:before{
+                    scale:1;
+                }
+            }
+        }
+        .product-general__form-check{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &:before{
+                position: absolute;
+                content:"";
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: #fef95f;
+                scale:0;
+                transition: all .6s;
+            }
+        }
+    }
+    &__form-input{
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+    &__form-text{
+        @extend %inter-500;
+        font-size: 18px;
+        color:#101010;
+    }
+    &__cart{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    &__cart-add{
+        @extend %btn;
+        padding: 0 40px;
+    }
+    &__cart-like{
+        min-width: 52px;
+        height: 100%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f8f8;
+    }
+    &__desc{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        h4{
+            @extend %title;
+            font-size: 40px;
+            margin-bottom: 25px;
+        }
+        p{
+            @extend %inter-400;
+            color:#101010
+        }
+    }
+    @media(max-width:1100px){
+        &__imgbox {
+            display: none;
+        }
+        &__imgbox--media{
+            display: block;
+        }
+        &__info{
+            flex-basis: auto;
+            gap: 24px;
+        }
+        &__header{
+            width: 100%;
+        }
+        &__imgbox{
+            margin: 0 auto;
+        }
+    }
+    @media(max-width:700px){
+        &__imgbox{
+            max-width: 400px;
+        }
+    }
+    @media(max-width:500px){
+        &__imgbox{
+            max-width: 320px;
+        }
+        &__cart{
+            flex-wrap: wrap;
+            align-items: flex-start;
+            width: 100%;
+        }
+        &__cart-add{
+            order:2;
+            width: 100%;
+        }
+        &__cart-like{
+            order:1;
+            height: 52px;
+        }
+    }
+}
+

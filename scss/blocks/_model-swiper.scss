@@ -1,0 +1,27 @@
+.model-swiper{
+    position: relative;
+    &__btnbox{
+        display: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 999;
+        left: 20px;
+        right: 20px;
+    }
+    &__btn{
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        &--next{
+            rotate:-180deg;
+        }
+    }
+    @media(max-width:600px){
+        &__btnbox{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

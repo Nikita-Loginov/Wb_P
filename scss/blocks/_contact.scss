@@ -1,0 +1,38 @@
+.contact{
+    padding: 0 0 clamp(3rem, 0.193rem + 11.98vw, 10rem);
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: clamp(2rem, 1.298rem + 2.99vw, 3.75rem);
+    }
+    &__title{
+        @extend %title;
+    }
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(4,215px);
+        justify-content: space-between;
+        gap: 10px;
+    }
+    &__map{
+        margin-bottom: 40px;
+    }
+    .contacts{
+        padding: 0;
+    }
+    @media(max-width:1023px){
+        &__items{
+            grid-template-columns: repeat(3,auto);
+            gap: 32px;
+        }
+    }
+    @media(max-width:767px){
+        &__items{
+            grid-template-columns: repeat(2,auto);
+        }
+        .contact-card{
+            flex-direction: column;
+        }
+    }
+}

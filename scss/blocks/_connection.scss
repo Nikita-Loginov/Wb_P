@@ -1,0 +1,58 @@
+.connection{
+    padding: clamp(2.5rem, 2.199rem + 1.28vw, 3.25rem) 0 40px;
+    background-color: $accent-color;
+    position: relative;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            right: -60%;
+            background-image: url(../../img/connection/bg.png);
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+    &__form{
+        max-width: 610px;
+        width: 100%;
+        position: relative;
+    }
+    &__title{
+        @extend %title;
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: clamp(1.5rem, 1.299rem + 0.86vw, 2rem);
+        font-size: clamp(2rem, 1.198rem + 3.42vw, 4rem);
+    }
+    &__items{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__inputbox{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 16px;
+    }
+    &__input{
+        @extend %input;
+    }
+    &__textarea{
+        @extend %textarea;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    &__btn{
+        @extend %btn;
+        width: 100%;
+        color:$accent-color;
+        background-color: #fff;
+    }
+    @media(max-width:610px){
+        &__inputbox{
+            grid-template-columns: repeat(1,1fr);
+            gap: 8px;
+        }
+    }
+}

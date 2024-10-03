@@ -1,0 +1,13 @@
+.similarProducts{
+    padding-bottom: 160px;
+    &__title{
+        @extend %title;
+        font-size: 40px;
+        margin-bottom: 80px;
+    }
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+    }
+}

@@ -1,0 +1,43 @@
+.itog-confirmation{
+    &__product{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+        padding-bottom: 26px;
+    }
+    &__product-amount{
+        @extend %inter-500;
+        color:#101010;
+        font-size: 20px;
+    }
+    &__product-summ{
+        @extend %inter-500;
+        color:#101010;
+        font-size: 24px;
+    }
+    &__orderbox{
+        padding-top: 40px;
+        border-top: 1px solid #e5e5e5;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    &__order-btn{
+        @extend %btn;
+    }
+    &__order-text{
+        @extend %inter-400;
+        color:#777;
+        font-size: 12px;
+        a{
+            color:$accent-color;
+        }
+    }
+    @media(max-width:450px){
+        &__product{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}

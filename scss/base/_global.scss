@@ -1,0 +1,52 @@
+html{
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body{
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: $bg-color;
+    color:$main-color;
+    @extend %inter-300;
+    overflow-x: hidden;
+    height: 100%;
+    position: relative;
+    &:before{
+        content:"";
+        position: fixed;
+        z-index: 2;
+        inset:0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.4);
+        transform-origin: left;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s;
+    }
+    &.open--menu{
+        &:before{
+            visibility: visible;
+            opacity: 1;
+            transform-origin: right;
+        }
+    }
+    // background-color: black;
+}
+
+.wrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+    flex:1;
+}
+
+.container{
+    max-width: $maxWidth-container;
+    margin: 0 auto;
+    padding: $padding-container;
+}

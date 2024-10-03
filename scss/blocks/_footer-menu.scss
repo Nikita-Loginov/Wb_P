@@ -1,0 +1,55 @@
+.footer-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    &__text{
+        @extend %inter-500;
+        font-size: 24px;
+    }
+    &__items{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    &__item{
+        position: relative;
+        max-width: 220px;
+        &:before{
+            content:"";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -4px;
+            background-color: $accent-color;
+            scale:0;
+            transform-origin: right;
+            transition: scale .6s;
+        }
+        &:hover{
+            &:before{
+                scale:1;
+                transform-origin: left;
+            }
+            
+        }
+    }
+    &__link,
+    .contact-card__link{
+        color:#fff;
+    }
+    @media(max-width:850px){
+        &.hidden-media{
+            display: none;
+        }
+        &__menubox{
+            flex-basis: auto;
+        }
+    }
+    @media(max-width:600px){
+        &__text{
+            display: none;
+        }
+    }
+    
+}

@@ -1,0 +1,112 @@
+.payment{
+    padding: 0 0 clamp(3rem, 0.193rem + 11.98vw, 10rem);
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.5rem, 1.099rem + 1.71vw, 2.5rem);
+    }
+    &__content{
+        max-width: 950px;
+    }
+    &__title{
+        @extend %title;
+        font-size: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+        margin-bottom: clamp(1rem, 0.599rem + 1.71vw, 2rem);
+        text-transform: uppercase;
+    }
+    &__textbox{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__text{
+        @extend %inter-400;
+        color:#101010;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        a{
+            color:$accent-color;
+        }
+    }
+    &__items{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__item{
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 0 clamp(1rem, 0.599rem + 1.71vw, 2rem);
+        transition: all 1s;
+        &.open{
+            background-color: $accent-color;
+            padding-bottom: 24px;
+            .payment__question-title{
+                color:#fff;
+            }
+            .payment__question-decor{
+                rotate:-180deg;
+                svg{
+                    path{
+                        fill:#fff;
+                    }
+                }
+            }
+            .payment__answer{
+                transform: translateX(0);
+            } 
+        }
+    }
+    &__question{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 24px 0;
+        transition: all .6s;
+        border-radius: inherit;
+        transition: all 1s;
+        &-decor{
+            transition: all 1s;
+            display: flex;
+            svg{
+                path{
+                    transition: all 1s
+                }
+            }
+        }
+    }
+    &__question-title{
+        @extend %inter-500;
+        color:#101010;
+    }
+    &__answerbox{
+        transition: all .6s;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1.4s,padding 1s;
+    }
+    &__answer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transform: translateX(-100px);
+        transition: all .6s;
+        color:#fff;
+        &:not(:last-of-type){
+            padding: 24px 0;
+        }
+        &:last-of-type{
+            padding-top: 24px;
+        }
+        &:not(:first-of-type){
+            border-top: 1px solid #e5e5e5;
+        }
+        &-text{
+            @extend %inter-400;
+            color:#4c4c4c;
+        }
+    }
+}

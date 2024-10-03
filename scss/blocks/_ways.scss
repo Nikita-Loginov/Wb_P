@@ -1,0 +1,63 @@
+.ways{
+    &__items{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+    &__text{
+        @extend %inter-500;
+        font-size: 18px;
+        color:#101010;
+    }
+    &__labelbox{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__label{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        cursor: pointer;
+    }
+    &__label-input{
+        position: absolute;
+        width: 0;
+        height: 0;
+        &:checked + .ways__label-radio{
+            background-color: $accent-color;
+            border-color: $accent-color;
+        }
+    }
+    &__label-radio{
+        display: inline;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid #b3b3b3;
+        background: #ffffff;
+        transition: all .5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex-shrink: 0;
+        &:before{
+            position: absolute;
+            content:"";
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+    }
+    &__label-text{
+        @extend %inter-400;
+        color:#777;
+    }
+}

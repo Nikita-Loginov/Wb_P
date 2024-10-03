@@ -1,0 +1,69 @@
+.information{
+    &__form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp(1.5rem, 0.898rem + 2.57vw, 3rem);
+    }
+    &__inputbox{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(0.5rem, 0.299rem + 0.86vw, 1rem);
+    }
+    &__input-fullname{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 24px;
+        justify-content: space-between;
+    }
+    &__label{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    &__label-text{
+        @extend %inter-400;
+        color:#4c4c4c;
+        line-height: 1.6;
+    }
+    &__label-input{
+        display: flex;
+        align-items: center;
+        min-height: 58px;
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        padding: 0 15px;
+        font-size: 18px;
+        width: 100%;
+        &:focus{
+            box-shadow: 3px 3px 3px #f8f8f8;
+        }
+        &:active{
+            box-shadow: 3px 3px 3px #f8f8f8;
+        }
+    }
+    &__input-contact{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: clamp(0.5rem, 0.299rem + 0.86vw, 1rem);
+    }
+    &__input-house{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: clamp(0.5rem, 0.299rem + 0.86vw, 1rem);
+        justify-content: space-between;
+    }
+    &__btn{
+        @extend %btn;
+        min-height: 46px;
+        padding: 0 50px;
+    }
+    @media(max-width:500px){
+        &__input-fullname{
+            grid-template-columns:repeat(1,1fr)
+        }
+        &__btn{
+            width: 100%;
+        }
+    }
+}

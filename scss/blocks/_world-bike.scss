@@ -1,0 +1,54 @@
+.world-bike{
+    padding-bottom: clamp(3rem, 0.193rem + 11.98vw, 10rem);
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+    &__title{
+        @extend %title;
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 1.198rem + 3.42vw, 4rem);
+    }
+    &__info-text{
+        @extend %inter-400;
+        color:#101010;
+    }
+    &__imgbox{
+        border-radius: 20px;
+        &--media{
+            display: none;
+        }
+        img{
+            border-radius: inherit;
+        }
+    }
+    @media(max-width:1100px){
+        &__inner{
+            gap: 16px;
+        }
+        &__imgbox{
+            display: none;
+            &--media{
+                display: block;
+                margin: 0 auto 8px;
+            }
+        }
+    }
+    @media(max-width:767px){
+        &__imgbox{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

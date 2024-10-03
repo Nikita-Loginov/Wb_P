@@ -1,0 +1,33 @@
+.simial-products{
+    padding-bottom: clamp(3rem, 0.193rem + 11.98vw, 10rem);
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 0.797rem + 5.13vw, 5rem);
+    }
+    &__title{
+        @extend %title;
+        font-size: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+    }
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        justify-content: space-between;
+        gap: 15px;
+    }
+    @media(max-width:1300px){
+        &__items{
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+    @media(max-width:1023px){
+        &__items{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    @media(max-width:600px){
+        &__items{
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+}

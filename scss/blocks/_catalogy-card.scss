@@ -1,0 +1,77 @@
+.catalogy-card{
+    border-radius: $borderRadiusCard;
+    padding: 40px;
+    transition: all .5s;
+    &:hover{
+        scale:1.05;
+    }
+    &--accent{
+        background-color: $accent-color;
+    }
+    &--default{
+        background-color: #101010;
+    }
+    &--bike{
+        padding: 120px 42px 120px 80px;
+        background-image: url(../img/catalogy/bike.png);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+    }
+    &--tradeIn{
+        padding: 80px 98px 0 98px;
+        background-image: url(../img/catalogy/tradeIn.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+    &--spareParts{
+        padding: 67px 0 67px 40px;
+        background-image: url(../img/catalogy/spareParts.png);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+    }
+    &--accessories{
+        padding: 167px 67px 30px 40px;
+        background-image: url(../img/catalogy/accessories.png);
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+    &--equipment{
+        padding: 40px 110px 0 40px;
+        background-image: url(../img/catalogy/equipment.png);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+    }
+    &--bicycleStands{
+        padding: 40px 110px 0 40px;
+        background-image: url(../img/catalogy/bicycleStands.png);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+    }
+    &__title{
+        @extend %title;
+        @extend %BebasNeue-400;
+        color:#fff;
+    }
+    @media(max-width:1023px){
+        &--tradeIn{
+            padding: 120px 42px 120px 80px;
+        }
+    }
+    @media(max-width:767px){
+        padding: 16px 0 84px 16px;
+        &:hover{
+            scale:1;
+        }
+        &--bike,
+        &--tradeIn{
+            padding: 21px 0 76px 24px;
+            background-size: contain;
+        }
+        &--tradeIn{
+            background-position: right;
+        }
+        &__title{
+            font-size: 30px;
+        }
+    }
+}

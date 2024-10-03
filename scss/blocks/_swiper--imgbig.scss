@@ -1,0 +1,9 @@
+.swiper--imgbig{
+    @media(max-width:1100px){
+        &__slide{
+            img{
+                height: auto;
+            }
+        }
+    }
+}

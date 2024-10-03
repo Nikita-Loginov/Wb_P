@@ -1,0 +1,23 @@
+.brend-card{
+    padding: clamp(1.5rem, 1.099rem + 1.71vw, 2.5rem);
+    background-color: #101010;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 510px;
+    &__text{
+        @extend %inter-500;
+        font-size: 24px;
+        color:#fff;
+    }
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    &__link{
+        font-size: 18px;
+        color:#fff;
+    }
+}

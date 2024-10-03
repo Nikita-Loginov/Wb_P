@@ -1,0 +1,43 @@
+.product-characteristic{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+    &__title{
+        @extend %title;
+        font-size: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+    }
+    &__list{
+        border: 1px solid #f8f8f8;
+        border-radius: 10px;
+    }
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 43px 24px;
+        span{
+            flex:50%;
+        }
+        &:nth-child(even){
+            background-color: #f8f8f8;
+        }
+    }
+    &__properties{
+        @extend %inter-500;
+        color:#101010;
+    }
+    &__meaning{
+        color:#4c4c4c;
+        text-align: right;
+    }
+    @media(max-width:600px){
+        &__item{
+            flex-direction: column;
+            padding: 16px;
+            gap: 24px;
+        }
+        &__meaning{
+            text-align: left;
+        }
+    }
+}

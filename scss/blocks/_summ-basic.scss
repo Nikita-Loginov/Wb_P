@@ -1,0 +1,54 @@
+.summ-basic{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 1.599rem + 1.71vw, 3rem);
+    &__title{
+        @extend %title;
+        font-size: clamp(2rem, 1.799rem + 0.86vw, 2.5rem);
+    }
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 0 20px;
+        justify-content: space-between;
+    }
+    &__list-left{
+        .summ-basic__item{
+            &:nth-child(even){
+                background-color: #f8f8f8;
+            }
+        }
+    }
+    &__list-right{
+        .summ-basic__item{
+            &:nth-child(odd){
+                background-color: #f8f8f8;
+            }
+        }
+    }
+    &__item{
+        padding: 30px clamp(1rem, 0.799rem + 0.86vw, 1.5rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+    }
+    &__service{
+        @extend %inter-500;
+        color:#101010;
+    }
+    &__price{
+        font-size: 18px;
+        color:#4c4c4c;
+    }
+    @media(max-width:1023px){
+        &__list{
+            grid-template-columns: repeat(1,1fr);
+        }
+        &__service{
+            @extend %inter-500;
+            color:#101010;
+            flex-basis: 50%;
+        }
+    }
+}

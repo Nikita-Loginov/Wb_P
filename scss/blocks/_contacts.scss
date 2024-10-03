@@ -1,0 +1,93 @@
+.contacts{
+    padding: clamp(1.688rem, 1.362rem + 1.39vw, 2.5rem) 0 clamp(3rem, 0.193rem + 11.98vw, 10rem);
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__info{
+        flex-basis: 660px;
+        & > *:not(:last-of-type){
+            margin-bottom: 24px;
+        }
+    }
+    &__adreess-title,
+    &__schedule-title,
+    &__tel-title,
+    &__email-title,
+    &__legalInfo-title{
+        margin-bottom: 16px;
+        color:#101010;
+        font-size: 18px;
+        @extend %inter-500;
+    }
+    &__adreess-text,
+    &__schedule-info,
+    &__schedule-characteristic,
+    &__tel,
+    &__email{
+        color:#101010;
+        display: block;
+    }
+    &__schedule-characteristic{
+        text-transform: uppercase;
+    }
+    &__legalInfo{
+        flex-basis: 620px;
+    }
+    &__legalInfo-link{
+        &:not(:last-of-type){
+            margin-bottom: 8px;
+        }
+    }
+    &__legalInfo-link{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+    }
+    &__legalInfo-properties{
+        color:#777;
+    }
+    &__legalInfo-meaning{
+        color:#101010;
+        text-align: right;
+    }
+    @media(max-width:1100px){
+        &__legalInfo-link{
+            flex-direction: column;
+            text-align: left;
+            align-items: flex-start;
+        }
+        &__legalInfo-meaning{
+            text-align: left;
+        }
+        &__legalInfo-link:not(:last-of-type){
+            margin-bottom: 16px;
+        }
+    }
+    @media(max-width:900px){
+        &__inner{
+            flex-direction: column;
+        }
+        &__info,
+        &__legalInfo{
+            flex-basis: auto;
+            
+        }
+        &__info,
+        &__legalInfo-linkbox{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+        }
+    }
+    @media(max-width:610px){
+        &__info,
+        &__legalInfo-linkbox{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            gap: 20px;
+        }
+    }
+}
